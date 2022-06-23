@@ -18,7 +18,7 @@ def names_of_registered_students(input_json_path, course_name):
 def enrollment_numbers(input_json_path, output_file_path):
     """
     This function writes all the courses names and the number of enrollments
-    in a descending order to the output file in the given path 
+    in a ascending order to the output file in the given path 
 
     :param input_json_path: Path of the students_database.json .
     :param output_file_path: Path of the output_path file.
