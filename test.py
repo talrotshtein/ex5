@@ -1,4 +1,4 @@
-from ex5 import names_of_registered_students,enrollment_numbers,courses_for_lecturer
+from ex5 import names_of_registered_students, enrollment_numbers, courses_for_lecturers
 import json
 import unittest
 
@@ -48,10 +48,10 @@ class Test(unittest.TestCase):
     def test3(self):
         
         """
-        this test for the third function - courses_for_lecturer.
+        this test for the third function - courses_for_lecturers.
         """
-        expected_output_file = "expected_output_test3_courses_for_lecturer.json"
-        courses_for_lecturer(database_directory_path,"test3_output.json")
+        expected_output_file = "expected_output_test3_courses_for_lecturers.json"
+        courses_for_lecturers(database_directory_path,"test3_output.json")
 
         with open("test3_output.json") as file_to_test:
             data_to_test = json.load(file_to_test)
@@ -66,7 +66,7 @@ class Test(unittest.TestCase):
             expected_data[h].sort()
 
         self.assertDictEqual(data_to_test ,expected_data, "Error: the content of the file created by   \
-                                                           the fucntion - courses_for_lecturer         \
+                                                           the fucntion - courses_for_lecturers        \
                                                            doesn't match the expected one.")
 
 
