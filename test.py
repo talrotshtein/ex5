@@ -24,11 +24,11 @@ class Test(unittest.TestCase):
         self.assertListEqual(correct_answer, result, "Error: the output of the function   \
                                                   names_of_registered_students        \
                                                   doesn't match the expected one.")
-"""
+
     def test2(self):
-        
+        """
         this test for the second function - enrollment_number.
-        
+        """
 
         expected_output_file = "expected_output_test2_enrollment_numbers.txt"
         enrollment_numbers(input_json_path,"test2.out")
@@ -41,8 +41,8 @@ class Test(unittest.TestCase):
         self.assertListEqual(data_to_test,expected_data, "Error: the content of the file created by   \
                                               the fucntion - enrollment_number     \
                                               doesn't match the expected one.")
-		
-"""
+
+
 		
 """
     def test3(self):
