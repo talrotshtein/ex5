@@ -4,15 +4,16 @@ import os
 
 
 def names_of_registered_students(input_json_path, course_name):
-    """
-    This function returns a list of the names of the students who registered for
-    the course with the name "course_name".
+    names = []
+    with open(input_json_path, 'r') as file:
+        source = json.load(file)
+    for i in source:
+        if course_name in ['registered_courses']:
+            names += ['student_name']
+    return names
 
-    :param input_json_path: Path of the students database json file.
-    :param course_name: The name of the course.
-    :return: List of the names of the students.
-    """
-    pass
+
+
 
 
 def enrollment_numbers(input_json_path, output_file_path):
@@ -36,5 +37,5 @@ def courses_for_lecturers(json_directory_path, output_json_path):
     """
     pass
 
-
+names_of_registered_students("semesters_databases/2022a.json", "asd")
 
