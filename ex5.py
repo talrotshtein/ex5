@@ -45,12 +45,23 @@ def enrollment_numbers(input_json_path, output_file_path):
 
 
 def courses_for_lecturers(json_directory_path, output_json_path):
-    """
-    This function writes the courses given by each lecturer in json format.
+    lecturers_dict = {}
+    files = os.listdir(json_directory_path)
+    for semester in files:
+        if semester[-1:-6:] != ".json":
+            continue
+        with open(semester, 'r') as file_2:
+            source = json.load(file_2)
+        for course_id in source.values:
+            for lecturer in course_id['lecturers']:
+                if lecturer not in lecturers_dict:
+                    lecturers_dict[lecturer] = [course_id]
+                else:
+                    if course_id not in lecturers_dict[lecturer]:
+                        lecturers_dict[lecturer] += course_id
+    with open('myfile.json', 'w') as file_3:
+         json.dump(lecturers_dict, file_3, indent=4)
 
-    :param json_directory_path: Path of the semsters_data files.
-    :param output_json_path: Path of the output json file.
-    """
-    pass
+
 
 

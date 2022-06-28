@@ -44,14 +44,12 @@ class Test(unittest.TestCase):
 
 
 		
-"""
+
     def test3(self):
-        
-        
-        this test for the third function - courses_for_lecturers.
+
         
         expected_output_file = "expected_output_test3_courses_for_lecturers.json"
-        courses_for_lecturers(database_directory_path,"test3_output.json")
+        courses_for_lecturers(database_directory_path, "test3_output.json")
 
         with open("test3_output.json") as file_to_test:
             data_to_test = json.load(file_to_test)
@@ -68,7 +66,7 @@ class Test(unittest.TestCase):
         self.assertDictEqual(data_to_test ,expected_data, "Error: the content of the file created by   \
                                                            the fucntion - courses_for_lecturers        \
                                                            doesn't match the expected one.")
-"""
+
 
 if __name__ == '__main__':
     unittest.main()
