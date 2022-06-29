@@ -38,7 +38,7 @@ def courses_for_lecturers(json_directory_path, output_json_path):
     for semester in files:
         if semester[-5:] != ".json":
             continue
-        with open(json_directory_path + '/' + semester, 'r') as file_2:
+        with open(json_directory_path + os.sep + semester, 'r') as file_2:
             source = json.load(file_2)
         for course_id in source.values():
             for lecturer in course_id['lecturers']:
