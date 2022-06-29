@@ -55,12 +55,12 @@ def courses_for_lecturers(json_directory_path, output_json_path):
         for course_id in source.values:
             for lecturer in course_id['lecturers']:
                 if lecturer not in lecturers_dict:
-                    lecturers_dict[lecturer] = [course_id]
+                    lecturers_dict[lecturer] = course_id['course_name']
                 else:
-                    if course_id not in lecturers_dict[lecturer]:
-                        lecturers_dict[lecturer] += course_id
+                    if course_id['course_name'] not in lecturers_dict[lecturer]:
+                        lecturers_dict[lecturer] += course_id['course_name']
     with open('myfile.json', 'w') as file_3:
-         json.dump(lecturers_dict, file_3, indent=4)
+         json.dump(lecturers_dict, file_3, indent= 4)
 
 
 
